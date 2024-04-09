@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adrichem.ReqnrollPlugIn.PollyRetry", "Adrichem.ReqnrollPlugIn.PollyRetry\Adrichem.ReqnrollPlugIn.PollyRetry.csproj", "{B87F1222-3713-45A3-A2AD-3A5E591FF46A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adrichem.ReqnrollPlugIn.PollyRetryTest", "Adrichem.ReqnrollPlugIn.PollyRetryTest\Adrichem.ReqnrollPlugIn.PollyRetryTest.csproj", "{9EB99E18-3A6C-48AE-AF91-E8AE8AFFD4CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin", "Adrichem.ReqnrollPlugIn.RetryStepPlugin\Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin.csproj", "{136ED12F-B8DC-4BAC-A962-D292E0410830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adrichem.ReqnrollPlugIn.RetryStepPlugin.RetryBasedOnAttribute", "Adrichem.ReqnrollPlugIn.RetryStepPlugin.RetryBasedOnAttribute\Adrichem.ReqnrollPlugIn.RetryStepPlugin.RetryBasedOnAttribute.csproj", "{EEA4B586-055A-4DF6-8036-D0B77BC63E25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adrichem.ReqnrollPlugIn.RetryStepPlugin.RetryBasedOnAttributeTest", "Adrichem.ReqnrollPlugIn.RetryStepPlugin.RetryBasedOnAttributeTest\Adrichem.ReqnrollPlugIn.RetryStepPlugin.RetryBasedOnAttributeTest.csproj", "{3325EAE1-DC11-40A1-91B0-5B9ED62AE85B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B87F1222-3713-45A3-A2AD-3A5E591FF46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87F1222-3713-45A3-A2AD-3A5E591FF46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87F1222-3713-45A3-A2AD-3A5E591FF46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B87F1222-3713-45A3-A2AD-3A5E591FF46A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB99E18-3A6C-48AE-AF91-E8AE8AFFD4CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB99E18-3A6C-48AE-AF91-E8AE8AFFD4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB99E18-3A6C-48AE-AF91-E8AE8AFFD4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB99E18-3A6C-48AE-AF91-E8AE8AFFD4CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136ED12F-B8DC-4BAC-A962-D292E0410830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136ED12F-B8DC-4BAC-A962-D292E0410830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136ED12F-B8DC-4BAC-A962-D292E0410830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136ED12F-B8DC-4BAC-A962-D292E0410830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA4B586-055A-4DF6-8036-D0B77BC63E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA4B586-055A-4DF6-8036-D0B77BC63E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA4B586-055A-4DF6-8036-D0B77BC63E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA4B586-055A-4DF6-8036-D0B77BC63E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3325EAE1-DC11-40A1-91B0-5B9ED62AE85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3325EAE1-DC11-40A1-91B0-5B9ED62AE85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3325EAE1-DC11-40A1-91B0-5B9ED62AE85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3325EAE1-DC11-40A1-91B0-5B9ED62AE85B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
