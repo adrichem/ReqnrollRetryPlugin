@@ -33,7 +33,7 @@ public void DoCheck() => MySystem.State.Should().BeOK();
 ```
 
 ## How the plugin is implemented 
-The plugin registers a custom `ITestExecutionEngine`. This custom engine derives from the default SpecFlow/ReqnRoll `TestExecutionEngine` but overrides the `ExecuteStepMatchAsync` method to: 
+The plugin registers a custom `ITestExecutionEngine`. This custom engine derives from the default ReqnRoll `TestExecutionEngine` but overrides the `ExecuteStepMatchAsync` method to: 
 1. Retrieve the `IRetryStepPluginConfiguration` from the ScenarioContainer and ask if the current `BindingMatch` should be retried.
 2. If retry is needed, it retrieves an `IAsyncRetryer` from the ScenarioContainer to perform the retry logic on the invocation of the binding like this
 ```csharp
