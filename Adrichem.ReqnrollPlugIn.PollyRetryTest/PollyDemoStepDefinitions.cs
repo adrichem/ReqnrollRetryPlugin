@@ -1,6 +1,6 @@
 ﻿using Adrichem.ReqnrollPlugIn.PollyRetry;
 using Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin;
-using BoDi;
+using Reqnroll.BoDi;
 using Reqnroll;
 using Reqnroll.Bindings;
 using System;
