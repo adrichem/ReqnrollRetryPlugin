@@ -1,10 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageProjectUrl>https://github.com/adrichem/ReqnrollRetryPlugin</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/adrichem/ReqnrollRetryPlugin</RepositoryUrl>
+    <Authors>Gerben van Adrichem</Authors>
+    <Copyright>Copyright (c) Gerben van Adrichem</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageTags>reqnroll;retry;scenario;bdd</PackageTags>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reqnroll" Version="1.0.1" />
+    <PackageReference Include="Reqnroll" Version="2.4.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath=""/>
+    <None Include="..\LICENSE.txt" Pack="true" PackagePath=""/>
+  </ItemGroup> 
 </Project>

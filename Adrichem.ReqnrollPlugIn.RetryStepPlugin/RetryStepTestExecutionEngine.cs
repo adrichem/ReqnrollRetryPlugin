@@ -1,5 +1,5 @@
 ﻿using System;
-using BoDi;
+using Reqnroll.BoDi;
 using Reqnroll.Analytics;
 using Reqnroll.ErrorHandling;
 using Reqnroll.Events;
@@ -41,13 +41,13 @@ namespace Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin
             ITestThreadExecutionEventPublisher testThreadExecutionEventPublisher,
             ITestPendingMessageFactory testPendingMessageFactory,
             ITestUndefinedMessageFactory testUndefinedMessageFactory,
-            ITestObjectResolver testObjectResolver = null,
-            IObjectContainer testThreadContainer = null)
+            ITestObjectResolver testObjectResolver,
+            ITestRunContext testRunContext)
         : base(stepFormatter, testTracer, errorProvider, stepArgumentTypeConverter, reqnrollConfiguration
               , bindingRegistry, unitTestRuntimeProvider, contextManager, stepDefinitionMatchService, bindingInvoker
               , obsoleteStepHandler, analyticsEventProvider, analyticsTransmitter, testRunnerManager
               , runtimePluginTestExecutionLifecycleEventEmitter, testThreadExecutionEventPublisher
-              , testPendingMessageFactory, testUndefinedMessageFactory, testObjectResolver, testThreadContainer)
+              , testPendingMessageFactory, testUndefinedMessageFactory, testObjectResolver, testRunContext)
         {
             _bindingInvoker = bindingInvoker;
             _testThreadExecutionEventPublisher = testThreadExecutionEventPublisher;
