@@ -63,6 +63,7 @@ namespace Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin
 
             durationHolder.Duration = default;
             Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
 
             try
             {
