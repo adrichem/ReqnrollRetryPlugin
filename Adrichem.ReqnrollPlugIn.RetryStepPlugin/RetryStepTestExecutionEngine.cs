@@ -1,6 +1,6 @@
 ﻿using System;
-using Reqnroll.BoDi;
 using Reqnroll.Analytics;
+using Reqnroll.EnvironmentAccess;
 using Reqnroll.ErrorHandling;
 using Reqnroll.Events;
 using Reqnroll.Plugins;
@@ -28,26 +28,40 @@ namespace Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin
             IErrorProvider errorProvider,
             IStepArgumentTypeConverter stepArgumentTypeConverter,
             ReqnrollConfiguration reqnrollConfiguration,
+            IEnvironmentOptions environmentOptions,
             IBindingRegistry bindingRegistry,
             IUnitTestRuntimeProvider unitTestRuntimeProvider,
             IContextManager contextManager,
             IStepDefinitionMatchService stepDefinitionMatchService,
             IAsyncBindingInvoker bindingInvoker,
             IObsoleteStepHandler obsoleteStepHandler,
-            IAnalyticsEventProvider analyticsEventProvider,
-            IAnalyticsTransmitter analyticsTransmitter,
-            ITestRunnerManager testRunnerManager,
+            IAnalyticsRuntimeTelemetryService telemetryService,
             IRuntimePluginTestExecutionLifecycleEventEmitter runtimePluginTestExecutionLifecycleEventEmitter,
             ITestThreadExecutionEventPublisher testThreadExecutionEventPublisher,
             ITestPendingMessageFactory testPendingMessageFactory,
             ITestUndefinedMessageFactory testUndefinedMessageFactory,
             ITestObjectResolver testObjectResolver,
             ITestRunContext testRunContext)
-        : base(stepFormatter, testTracer, errorProvider, stepArgumentTypeConverter, reqnrollConfiguration
-              , bindingRegistry, unitTestRuntimeProvider, contextManager, stepDefinitionMatchService, bindingInvoker
-              , obsoleteStepHandler, analyticsEventProvider, analyticsTransmitter, testRunnerManager
-              , runtimePluginTestExecutionLifecycleEventEmitter, testThreadExecutionEventPublisher
-              , testPendingMessageFactory, testUndefinedMessageFactory, testObjectResolver, testRunContext)
+        : base(
+            stepFormatter,
+            testTracer,
+            errorProvider,
+            stepArgumentTypeConverter,
+            reqnrollConfiguration,
+            environmentOptions,
+            bindingRegistry,
+            unitTestRuntimeProvider,
+            contextManager,
+            stepDefinitionMatchService,
+            bindingInvoker,
+            obsoleteStepHandler,
+            telemetryService,
+            runtimePluginTestExecutionLifecycleEventEmitter,
+            testThreadExecutionEventPublisher,
+            testPendingMessageFactory,
+            testUndefinedMessageFactory,
+            testObjectResolver,
+            testRunContext)
         {
             _bindingInvoker = bindingInvoker;
             _testThreadExecutionEventPublisher = testThreadExecutionEventPublisher;
@@ -59,7 +73,7 @@ namespace Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin
         protected override async Task ExecuteStepMatchAsync(BindingMatch match, object[] arguments, DurationHolder durationHolder)
         {
 
-            _testThreadExecutionEventPublisher.PublishEvent(new StepBindingStartedEvent(match.StepBinding));
+            await _testThreadExecutionEventPublisher.PublishEventAsync(new StepBindingStartedEvent(match.StepBinding));
 
             durationHolder.Duration = default;
             Stopwatch stopwatch = new Stopwatch();
@@ -67,7 +81,6 @@ namespace Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin
 
             try
             {
-
                 IRetryStepPluginConfiguration cfg = ScenarioContext.ScenarioContainer.Resolve<IRetryStepPluginConfiguration>();
                 if (cfg.RetryEnabledFor(match))
                 {
@@ -84,7 +97,7 @@ namespace Adrichem.ReqnrollPlugIn.RetryStep.ReqnrollPlugin
             {
                 stopwatch.Stop();
                 durationHolder.Duration = stopwatch.Elapsed;
-                _testThreadExecutionEventPublisher.PublishEvent(new StepBindingFinishedEvent(match.StepBinding, durationHolder.Duration));
+                await _testThreadExecutionEventPublisher.PublishEventAsync(new StepBindingFinishedEvent(match.StepBinding, durationHolder.Duration));
             }
         }
     }

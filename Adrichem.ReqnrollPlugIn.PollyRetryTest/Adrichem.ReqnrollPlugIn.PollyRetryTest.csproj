@@ -20,7 +20,7 @@
 		  <PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="Polly" Version="8.5.2" />
-		<PackageReference Include="Reqnroll.MsTest" Version="2.4.0" />
+		<PackageReference Include="Reqnroll.MsTest" Version="3.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
